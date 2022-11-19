@@ -1,7 +1,7 @@
 export const PRECISION = 1000000;
 export const RE = /^[0-9]*[.]?[0-9]{0,6}$/;
 // Replace the below address with the address of the contract you deployed 
-export const CONTRACT_ADDRESS = "0x806D6B235C33c6B5b82EcD3B11509eFeC61BF643";
+export const CONTRACT_ADDRESS = "0xaeaa4D9578c7d7313c0Bc12681980dE47A26Ab8d";
 export const abi = [
     {
         "inputs": [
@@ -18,92 +18,6 @@ export const abi = [
         ],
         "name": "faucet",
         "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_amountToken1",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "_amountToken2",
-                "type": "uint256"
-            }
-        ],
-        "name": "provide",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "share",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_amountToken1",
-                "type": "uint256"
-            }
-        ],
-        "name": "swapToken1",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "amountToken2",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_amountToken2",
-                "type": "uint256"
-            }
-        ],
-        "name": "swapToken2",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "amountToken1",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_share",
-                "type": "uint256"
-            }
-        ],
-        "name": "withdraw",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "amountToken1",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "amountToken2",
-                "type": "uint256"
-            }
-        ],
         "stateMutability": "nonpayable",
         "type": "function"
     },
@@ -289,6 +203,92 @@ export const abi = [
             }
         ],
         "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amountToken1",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "_amountToken2",
+                "type": "uint256"
+            }
+        ],
+        "name": "provide",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "share",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amountToken1",
+                "type": "uint256"
+            }
+        ],
+        "name": "swapToken1",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "amountToken2",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_amountToken2",
+                "type": "uint256"
+            }
+        ],
+        "name": "swapToken2",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "amountToken1",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "_share",
+                "type": "uint256"
+            }
+        ],
+        "name": "withdraw",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "amountToken1",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amountToken2",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
         "type": "function"
     }
 ]
