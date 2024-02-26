@@ -42,7 +42,7 @@ export default function App() {
     return (
         <div className="pageBody">
             <div className="navBar">
-                <div className="appName"> Hepton AMM</div>
+                <div className="appName"> CRYPT AMM</div>
                 {myContract === null ? (
                     <div className="connectBtn" onClick={() => connect()}>
                         {" "}
