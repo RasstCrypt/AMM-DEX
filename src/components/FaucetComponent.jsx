@@ -4,15 +4,15 @@ import BoxTemplate from "./BoxTemplate";
 import { PRECISION } from "../constants";
 
 export default function FaucetComponent(props) {
-	const [amountOfKar, setAmountOfKar] = useState(0);
-	const [amountOfKothi, setAmountOfKothi] = useState(0);
+	const [amountOfUSDT, setAmountOfUSDT] = useState(0);
+	const [amountOfCRYPT, setAmountOfCRYPT] = useState(0);
 
-	const onChangeAmountOfKothi = (e) => {
-		setAmountOfKothi(e.target.value);
+	const onChangeAmountOfCRYPT = (e) => {
+		setAmountOfCRYPT(e.target.value);
 	};
 
-	const onChangeAmountOfKar = (e) => {
-		setAmountOfKar(e.target.value);
+	const onChangeAmountOfUSDT = (e) => {
+		setAmountOfUSDT(e.target.value);
 	};
 
 	async function onClickFund() {
@@ -20,19 +20,19 @@ export default function FaucetComponent(props) {
 			alert("Connect to Metamask");
 			return;
 		}
-		if (["", "."].includes(amountOfKar) || ["", "."].includes(amountOfKothi)) {
+		if (["", "."].includes(amountOfUSDT) || ["", "."].includes(amountOfCRYPT)) {
 			alert("Amount should be a valid number");
 			return;
 		}
 		try {
 			let response = await props.contract.faucet(
-				amountOfKar * PRECISION,
-				amountOfKothi * PRECISION
+				amountOfUSDT * PRECISION,
+				amountOfCRYPT * PRECISION
 			);
 			let res = await response.wait();
 			console.log("res", res);
-			setAmountOfKar(0);
-			setAmountOfKothi(0);
+			setAmountOfUSDT(0);
+			setAmountOfCRYPT(0);
 			await props.getHoldings();
 			alert("Success");
 		} catch (err) {
@@ -44,16 +44,16 @@ export default function FaucetComponent(props) {
 	return (
 		<div className="tabBody">
 			<BoxTemplate
-				leftHeader={"Amount of KAR"}
-				right={"KAR"}
-				value={amountOfKar}
-				onChange={(e) => onChangeAmountOfKar(e)}
+				leftHeader={"Amount of USDT"}
+				right={"USDT"}
+				value={amountOfUSDT}
+				onChange={(e) => onChangeAmountOfUSDT(e)}
 			/>
 			<BoxTemplate
-				leftHeader={"Amount of KOTHI"}
-				right={"KOTHI"}
-				value={amountOfKothi}
-				onChange={(e) => onChangeAmountOfKothi(e)}
+				leftHeader={"Amount of CRYPT"}
+				right={"CRYPT"}
+				value={amountOfCRYPT}
+				onChange={(e) => onChangeAmountOfCRYPT(e)}
 			/>
 			<div className="bottomDiv">
 				<div className="btn" onClick={() => onClickFund()}>

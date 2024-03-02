@@ -75,8 +75,8 @@ export default function WithdrawComponent(props) {
 			/>
 			{estimateTokens.length > 0 && (
 				<div className="withdrawEstimate">
-					<div className="amount">Amount of Kar: {estimateTokens[0]}</div>
-					<div className="amount">Amount of Kothi: {estimateTokens[1]}</div>
+					<div className="amount">Amount of USDT: {estimateTokens[0]}</div>
+					<div className="amount">Amount of CRYPT: {estimateTokens[1]}</div>
 				</div>
 			)}
 			<div className="bottomDiv">

@@ -42,14 +42,14 @@ export default function App() {
     return (
         <div className="pageBody">
             <div className="navBar">
-                <div className="appName"> CRYPT AMM</div>
+                <div className="appName"> BERACRYPT DEX</div>
                 {myContract === null ? (
                     <div className="connectBtn" onClick={() => connect()}>
                         {" "}
                         Connect to Metamask{" "}
                     </div>
                 ) : (
-                    <div className="connected"> {"Connected to " + address} </div>
+                    <div className="connected"> {"Connected" + address} </div>
                 )}
             </div>
             <ContainerComponent contract={myContract} connect={() => connect()} />

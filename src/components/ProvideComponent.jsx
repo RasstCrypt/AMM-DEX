@@ -5,8 +5,8 @@ import BoxTemplate from "./BoxTemplate";
 import { PRECISION } from "../constants";
 
 export default function ProvideComponent(props) {
-	const [amountOfKar, setAmountOfKar] = useState(0);
-	const [amountOfKothi, setAmountOfKothi] = useState(0);
+	const [amountOfUSDT, setAmountOfUSDT] = useState(0);
+	const [amountOfCRYPT, setAmountOfCRYPT] = useState(0);
 	const [error, setError] = useState("");
 
 	const getProvideEstimate = async (token, value) => {
@@ -14,16 +14,16 @@ export default function ProvideComponent(props) {
 		if (props.contract !== null) {
 			try {
 				let estimate;
-				if (token === "KAR") {
+				if (token === "USDT") {
 					estimate = await props.contract.getEquivalentToken2Estimate(
 						value * PRECISION
 					);
-					setAmountOfKothi(estimate / PRECISION);
+					setAmountOfCRYPT(estimate / PRECISION);
 				} else {
 					estimate = await props.contract.getEquivalentToken1Estimate(
 						value * PRECISION
 					);
-					setAmountOfKar(estimate / PRECISION);
+					setAmountOfUSDT(estimate / PRECISION);
 				}
 			} catch (err) {
 				console.log("Err: ", err);
@@ -36,18 +36,18 @@ export default function ProvideComponent(props) {
 		}
 	};
 
-	const onChangeAmountOfKar = (e) => {
-		setAmountOfKar(e.target.value);
-		getProvideEstimate("KAR", e.target.value);
+	const onChangeAmountOfUSDT = (e) => {
+		setAmountOfUSDT(e.target.value);
+		getProvideEstimate("USDT", e.target.value);
 	};
 
-	const onChangeAmountOfKothi = (e) => {
-		setAmountOfKothi(e.target.value);
-		getProvideEstimate("KOTHI", e.target.value);
+	const onChangeAmountOfCRYPT = (e) => {
+		setAmountOfCRYPT(e.target.value);
+		getProvideEstimate("CRYPT", e.target.value);
 	};
 
 	const provide = async () => {
-		if (["", "."].includes(amountOfKar) || ["", "."].includes(amountOfKothi)) {
+		if (["", "."].includes(amountOfUSDT) || ["", "."].includes(amountOfCRYPT)) {
 			alert("Amount should be a valid number");
 			return;
 		}
@@ -57,12 +57,12 @@ export default function ProvideComponent(props) {
 		} else {
 			try {
 				let response = await props.contract.provide(
-					amountOfKar * PRECISION,
-					amountOfKothi * PRECISION
+					amountOfUSDT * PRECISION,
+					amountOfCRYPT * PRECISION
 				);
 				await response.wait();
-				setAmountOfKar(0);
-				setAmountOfKothi(0);
+				setAmountOfUSDT(0);
+				setAmountOfCRYPT(0);
 				await props.getHoldings();
 				alert("Success");
 				setError("");
@@ -75,17 +75,17 @@ export default function ProvideComponent(props) {
 	return (
 		<div className="tabBody">
 			<BoxTemplate
-				leftHeader={"Amount of KAR"}
-				value={amountOfKar}
-				onChange={(e) => onChangeAmountOfKar(e)}
+				leftHeader={"Amount of USDT"}
+				value={amountOfUSDT}
+				onChange={(e) => onChangeAmountOfUSDT(e)}
 			/>
 			<div className="swapIcon">
 				<MdAdd />
 			</div>
 			<BoxTemplate
-				leftHeader={"Amount of KOTHI"}
-				value={amountOfKothi}
-				onChange={(e) => onChangeAmountOfKothi(e)}
+				leftHeader={"Amount of CRYPT"}
+				value={amountOfCRYPT}
+				onChange={(e) => onChangeAmountOfCRYPT(e)}
 			/>
 			<div className="error">{error}</div>
 			<div className="bottomDiv">
