@@ -1,8 +1,12 @@
 {
-  "homepage": "http://realnimish.github.io/avalanche-amm",
-  "name": "avalanche-amm",
+  "name": "crypt-amm",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RasstCrypt/AMM-DEX.git"
+  },
+  "homepage": "https://github.com/RasstCrypt/AMM-DEX",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -11,7 +15,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
