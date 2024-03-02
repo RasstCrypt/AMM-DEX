@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/RasstCrypt/AMM-DEX/static/css/main.0f03f2fe.chunk.css",
+    "main.js": "/RasstCrypt/AMM-DEX/static/js/main.f617ed8b.chunk.js",
+    "main.js.map": "/RasstCrypt/AMM-DEX/static/js/main.f617ed8b.chunk.js.map",
+    "runtime-main.js": "/RasstCrypt/AMM-DEX/static/js/runtime-main.b81a1d6f.js",
+    "runtime-main.js.map": "/RasstCrypt/AMM-DEX/static/js/runtime-main.b81a1d6f.js.map",
+    "static/js/2.d6d8f0de.chunk.js": "/RasstCrypt/AMM-DEX/static/js/2.d6d8f0de.chunk.js",
+    "static/js/2.d6d8f0de.chunk.js.map": "/RasstCrypt/AMM-DEX/static/js/2.d6d8f0de.chunk.js.map",
+    "index.html": "/RasstCrypt/AMM-DEX/index.html",
+    "static/css/main.0f03f2fe.chunk.css.map": "/RasstCrypt/AMM-DEX/static/css/main.0f03f2fe.chunk.css.map",
+    "static/js/2.d6d8f0de.chunk.js.LICENSE.txt": "/RasstCrypt/AMM-DEX/static/js/2.d6d8f0de.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b81a1d6f.js",
+    "static/js/2.d6d8f0de.chunk.js",
+    "static/css/main.0f03f2fe.chunk.css",
+    "static/js/main.f617ed8b.chunk.js"
+  ]
+}
